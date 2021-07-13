@@ -13,13 +13,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: LocaleText('language'),
+        centerTitle: true,
+        title: Text(Locales.string(context, 'language')),
       ),
       body: Center(
-        child: LocaleText(
-          'welcome',
-          style: TextStyle(fontSize: 24),
-        ),
+        child: Text(Locales.string(context, 'welcome')),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
@@ -47,13 +45,13 @@ class _LanguagePageState extends State<LanguagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: LocaleText('language'),
+        title:Text(Locales.string(context, 'language')),
       ),
       body: Column(
         children: [
           ListTile(
             title: Text('English'),
-            onTap: () => LocaleNotifier.of(context)!.change('eng'),
+            onTap: () => LocaleNotifier.of(context)!.change('en'),
           ),
           ListTile(
             title: Text('O\'zbek'),
